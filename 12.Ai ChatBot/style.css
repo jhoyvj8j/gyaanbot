@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* .navbar-light .navbar-nav .nav-link {
+    color: #000;
+  } */
+
+/* Full-Screen Layout */
+body {
+    width: 100%;
+    height: 100vh;
+    background: #E3F2FD; /* Light mode background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: calc(100vh - 80px);
+    background: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* User Chat Box (Right Aligned) */
+.user-chat-box {
+    width: fit-content;
+    max-width: 70%;
+    align-self: flex-end;
+}
+
+/* AI Chat Box (Left Aligned) */
+.ai-chat-box {
+    width: fit-content;
+    max-width: 70%;
+    align-self: flex-start;
+}
+
+/* User Chat Bubble */
+.user-chat-area {
+    padding: 12px 18px;
+    background: #D9FDD3; /* Soft green like ChatGPT light mode */
+    color: #000;
+    border-radius: 18px 18px 0px 18px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+/* AI Chat Bubble */
+.ai-chat-area {
+    padding: 12px 18px;
+    background: #F0F0F0; /* Light gray for AI messages */
+    color: #333;
+    border-radius: 18px 18px 18px 0px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Input Area */
+.prompt-area {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Input Field */
+.prompt-area input {
+    width: 70%;
+    height: 45px;
+    background: #F3F3F3;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    color: black;
+    font-size: 14px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Send Button */
+.prompt-area button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #050505;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.prompt-area button:hover {
+    background: #0E8C6E;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .user-chat-box,
+    .ai-chat-box {
+        max-width: 85%;
+    }
+}
+
+
+/*images uploding 
+/* Uploaded Image Styling (Small Inside Icon) */
+#image img {
+    width: 40px; /* Small size */
+    height: 40px; /* Same height */
+    object-fit: cover; /* Keeps aspect ratio */
+    border-radius: 50%; /* Circular */
+    border: 2px solid #ccc;
+}
+
+/* Uploaded Image in Chat (Smaller Display) */
+.user-chat-area img.chooseimg,
+.ai-chat-area img.chooseimg {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
